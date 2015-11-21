@@ -1,0 +1,51 @@
+html, body {
+    background: #031926;
+    color: #468189;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    color: #9DBEBB;
+    color: #77ACA2;
+}
+
+body > header {
+    padding: .4em;
+    height: 80%;
+}
+
+body > header > h1, body > header > p {
+    background: #468189;
+    color: #fff;
+    display: inline-block;
+}
+
+body > header > h1 {
+    padding: .25em .45em;
+    font-size: 2.4em;
+    margin-bottom: .25em;
+}
+
+body > header > p {
+    padding: .60em 1.08em;
+    margin-bottom: .60em;
+}
+
+body > header > p:last-of-type {
+    margin-bottom: 0;
+}
+
+main {
+    background: #e2e2e2;
+}
+
+
+
+.loud > span {
+	font-family: monospace;
+	font-weight: 900;
+	font-size: 4em;
+	display: block;
+}

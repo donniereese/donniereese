@@ -1,0 +1,17 @@
+@media(min-width: 480px) {
+    body > header > nav {
+        display: block;
+        width: 100%;
+        margin: 1em 0;
+    }
+    body > header > nav > a {
+        display: inline-block;
+        width: 49.6%;
+        background: #468189;
+        border-radius: .25em;
+		margin: 0;
+        padding: 0;
+        color: #F4E9CD;
+        text-decoration: none;
+    }
+}
