@@ -71,11 +71,16 @@ h2 {
   .hero-content .hero-content {
     flex-grow: 2;
     flex-shrink: 1; }
+  .hero-content .hero-logo {
+    display: none; }
   .hero-content .brand-header-logo {
     display: inline-block;
     max-height: 100%; }
   .hero-content .about-blurb {
+    margin: 3em  1em 1em;
     flex-grow: 1; }
+    .hero-content .about-blurb .link-to-more {
+      padding: .25em 1em; }
 
 .header-title,
 .main-nav,
@@ -95,6 +100,27 @@ h2 {
 .standout-nav {
   margin: 1em;
   padding: .65em; }
+
+label,
+input,
+textarea {
+  border: 0;
+  width: 100%;
+  margin-bottom: .5em;
+  display: block; }
+
+input,
+textarea {
+  padding: .65em .65em 0; }
+  input:focus,
+  textarea:focus {
+    outline: none; }
+
+button {
+  padding: .2em .8em; }
+
+.contact-form textarea {
+  height: 7.4em; }
 
 h1 {
   background: #171d1d;
@@ -118,7 +144,7 @@ textarea {
 
 input,
 textarea {
-  border-bottom: .25rem solid #000; }
+  border-bottom: 0.25rem solid #000; }
   input:focus,
   textarea:focus {
     border-bottom: .25rem solid #5863F8; }
@@ -167,6 +193,11 @@ button {
   background: url("laboratory.donniereese.com/images/talkout.png") center center no-repeat;
   background-size: 100%; }
 
+.about-blurb {
+  background: url("../images/blurb-accent.png") top left no-repeat;
+  background-size: 2em;
+  padding-top: .75em; }
+
 h1 {
   font-family: Slabo, sans-serif;
   font-size: 2.4em;
@@ -208,6 +239,10 @@ button {
   font-size: 1.2em; }
   .main-nav a {
     font-size: 1.25em; }
+
+.about-blurb {
+  font-size: 2.4em;
+  font-size: 6vw; }
 
 .aside-title {
   font-family: 'Montserrat', sans-serif;
@@ -289,27 +324,6 @@ button {
   height: 16.23125em;
   padding: 4.8em 3.4em 2em 2.8em;
   overflow: hidden; }
-
-label,
-input,
-textarea {
-  border: 0;
-  width: 100%;
-  margin-bottom: .5em;
-  display: block; }
-
-input,
-textarea {
-  padding: .65em .65em 0; }
-  input:focus,
-  textarea:focus {
-    outline: none; }
-
-button {
-  padding: .2em .8em; }
-
-.contact-form textarea {
-  height: 7.4em; }
 
 .float-clear::after {
   content: '.';
