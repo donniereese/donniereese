@@ -24,66 +24,84 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0;
-  padding: 0; }
+    margin: 0;
+    padding: 0;
+}
 
 html,
 body {
-  width: 100%;
-  height: 100%; }
+    width: 100%;
+    height: 100%;
+}
 
 body {
-  background: #fff;
-  font-family: 'Roboto Slab', slab-serif;
-  font-weight: 400; }
+    background: #fff;
+    font-family: 'Roboto Slab', slab-serif;
+    font-weight: 400;
+}
 
 p {
-  margin: .45em 0 1.6em; }
+    margin: .45em 0 1.6em;
+}
 
 img {
-  max-width: 100%;
-  height: auto; }
+    max-width: 100%;
+    height: auto;
+}
 
 h2 {
-  margin-bottom: .65em; }
+    margin-bottom: .65em;
+}
 
 .hero-section {
-  position: relative;
-  height: 90vh; }
+    position: relative;
+    height: 90vh;
+}
 
 .page-header {
-  width: 100%;
-  position: relative;
-  transition: max-width 1s ease-in-out; }
-  .page-header * {
-    vertical-align: top; }
+    width: 100%;
+    position: relative;
+    transition: max-width 1s ease-in-out;
+}
+
+.page-header * {
+    vertical-align: top;
+}
 
 .hero-content {
-  width: 100%;
-  max-height: 70vh;
-  text-align: center;
-  position: relative;
-  margin: 0 auto;
-  padding-top: 3em; }
-  .hero-content .hero-logo {
-    display: none; }
-  .hero-content .brand-header-logo {
-    display: inline-block;
-    max-height: 100%;
-    position: relative; }
-  .hero-content .about-blurb {
+    width: 100%;
+    max-height: 70vh;
+    text-align: center;
+    position: relative;
     margin: 0 auto;
-    padding-top: .75em;
-    display: block; }
-    .hero-content .about-blurb .link-to-more {
-      padding: .25em 1em; }
+    padding-top: 3em;
+}
+    .hero-content .hero-logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    .hero-content .brand-header-logo {
+        display: inline-block;
+        max-height: 100%;
+        position: relative;
+    }
+    .hero-content .about-blurb {
+        margin: 0 auto;
+        padding-top: .75em;
+        display: block;
+    }
+        .hero-content .about-blurb .link-to-more {
+            padding: .25em 1em;
+        }
 
 .header-title,
 .main-nav,
 .main-nav a {
-  display: inline-block;
-  zoom: 1;
-  *display: inline; }
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
 
 .main-nav {
   display: inline-block;
@@ -159,7 +177,8 @@ button {
 
 .hero-section {
   background-color: #1B1E20;
-  background-color: #EDC10C; }
+  background-color: #EDC10C;
+  background: url('../images/wiggle-bg.svg') top left / 52px 26px #EDC10C; }
 
 .main-nav {
   background: #1ed9af;
@@ -248,53 +267,73 @@ button {
   padding: .45em .65em; }
 
 .fine-print {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400; }
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
 
 .talkout {
-  font-size: 2rem;
-  text-align: left; }
+    font-size: 2rem;
+    text-align: left;
+}
 
 .contact-form label {
-  font-size: 2em; }
+    font-size: 2em;
+}
 
 .contact-form button {
-  font-size: 1.6em; }
+    font-size: 1.6em;
+}
 
 .header-title {
-  padding: .35em; }
+    padding: .35em;
+}
 
 .about-section {
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  padding: 4em 1em;
-  min-height: 100vh;
-  text-align: center; }
-  .about-section section {
-    text-align: left;
-    margin: 0 auto; }
-  .about-section h2 {
-    font-size: 2.4em;
-    font-size: 12vmin; }
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4em 1em;
+    min-height: 100vh;
+    text-align: center;
+}
+
+    .about-section section {
+        text-align: left;
+        margin: 0 auto;
+    }
+    .about-section h2 {
+        font-size: 2.4em;
+        font-size: 12vmin;
+    }
     @media only screen and (max-height: 420px) {
-      .about-section h2 {
-        font-size: 2.4em; } }
+        .about-section h2 {
+            font-size: 2.4em;
+        }
+    }
     @media only screen and (min-height: 700px) {
-      .about-section h2 {
-        font-size: 3.6em; } }
-  .about-section p {
-    font-size: 1.2em;
-    font-size: 3.5vw; }
+        .about-section h2 {
+            font-size: 3.6em;
+        }
+    }
+
+    .about-section p {
+        font-size: 1.2em;
+        font-size: 3.5vw;
+    }
     @media only screen and (max-width: 420px) {
-      .about-section p {
-        font-size: 1.2em; } }
+        .about-section p {
+            font-size: 1.2em;
+        }
+    }
     @media only screen and (min-width: 700px) {
-      .about-section p {
-        font-size: 2em; } }
+        .about-section p {
+            font-size: 2em;
+        }
+    }
 
 .main-footer {
-  padding: 1em; }
+    padding: 1em;
+}
 
 .content-section {
   padding: 1em; }
