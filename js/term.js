@@ -30,8 +30,9 @@ class WebTerm {
      * This is from Google library, so that's really cool.
      */
     regExpEscape(s) {
-        return String(s).replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, '\\$1').
-            replace(/\x08/g, '\\x08');
+        // return String(s).replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, '\\$1').
+        //     replace(/\x08/g, '\\x08');
+        return s;
     };
 
     createNewButton() {
@@ -42,11 +43,14 @@ class WebTerm {
 
     command(e) {
         e.preventDefault();
-        if (e.key === 'Enter') {
+        if (e.key === 'ArrowUp') {
+            this.input.value = this.history[this.history.length - 1];
+        } else if (e.key === 'Enter') {
             this.currentInput = this.regExpEscape(this.input.value);
             const cmdArr = this.currentInput.split(' ');
             let found = true;
             switch(cmdArr[0]) {
+                case 'close':
                 case 'quit':
                 case 'exit':
                     this.deactivateTerminal();
@@ -55,6 +59,10 @@ class WebTerm {
                 case 'refresh':
                     window.location.reload();
                     break;
+                case 'scroll':
+                    const dist = parseInt(cmdArr[1]) || 100;
+                    window.scrollBy(0,dist);
+                    break;
                 default:
                     console.log('false!');
                     found = false;
@@ -62,9 +70,17 @@ class WebTerm {
 
             if (!found) {
                 const logItem =document.createElement('li');
-                const logText = document.createTextNode(`'${this.currentInput}' is not a valid command.`);
+                const text = `'${this.currentInput}' is not a valid command.`;
+                const logText = document.createTextNode(text);
                 logItem.appendChild(logText);
                 this.log.appendChild(logItem);
+                this.history.push(this.currentInput);
+            } else {
+                const logItem =document.createElement('li');
+                const logText = document.createTextNode(`${this.currentInput}`);
+                logItem.appendChild(logText);
+                this.log.appendChild(logItem);
+                this.history.push(this.currentInput);
             }
 
             this.input.value = '';

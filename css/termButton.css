@@ -21,12 +21,14 @@
     color: #fff;
     height: 2em;
     /* border-top: 1px solid #333; */
+    cursor: text;
 }
 
 .termWindow ul {
     /* height: 100%; */
     max-height: calc(100% - 2em);
     list-style: none;
+    cursor: text;
 }
 
 .termButton {
@@ -39,6 +41,7 @@
     padding: .25em;
     display: block;
     border:1px solid #fff;
+    cursor: pointer;
 
     position: absolute;
     top: .25em;
@@ -46,6 +49,7 @@
     right: .25em;
 
     z-index: 1000;
+
 }
 
 .termButton--sticky {
