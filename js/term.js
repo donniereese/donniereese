@@ -11,6 +11,7 @@ class WebTerm {
         this.currentInput = '';
 
         this.history = [];
+        this.historyPointer = -1;
 
         // Find button instances by class
         const buttonMatches = document.getElementsByClassName('termButton');
@@ -44,7 +45,17 @@ class WebTerm {
     command(e) {
         e.preventDefault();
         if (e.key === 'ArrowUp') {
-            this.input.value = this.history[this.history.length - 1];
+            if (this.history.length > 0 && this.historyPointer >= 0) {
+                this.input.value = this.history[this.historyPointer];
+                this.historyPointer = this.historyPointer > 0 ? this.historyPointer - 1 : 0;
+            }
+        } else if (e.key === 'ArrowDown') {
+            if (this.historyPointer >= 0 && this.historyPointer < (this.history.length - 1)) {
+                this.historyPointer++;
+                this.input.value = this.history[this.historyPointer];
+            } if (this.historyPointer === this.history.length - 1) {
+                this.input.value = '';
+            }
         } else if (e.key === 'Enter') {
             this.currentInput = this.regExpEscape(this.input.value);
             const cmdArr = this.currentInput.split(' ');
@@ -64,7 +75,6 @@ class WebTerm {
                     window.scrollBy(0,dist);
                     break;
                 default:
-                    console.log('false!');
                     found = false;
             }
 
@@ -74,15 +84,14 @@ class WebTerm {
                 const logText = document.createTextNode(text);
                 logItem.appendChild(logText);
                 this.log.appendChild(logItem);
-                this.history.push(this.currentInput);
             } else {
                 const logItem =document.createElement('li');
                 const logText = document.createTextNode(`${this.currentInput}`);
                 logItem.appendChild(logText);
                 this.log.appendChild(logItem);
-                this.history.push(this.currentInput);
             }
-
+            this.history.push(this.currentInput);
+            this.historyPointer = this.history.length - 1;
             this.input.value = '';
         }
     }
@@ -109,13 +118,11 @@ class WebTerm {
         this.input.addEventListener('keyup', this.command.bind(this));
         // set focus on input
         this.input.focus();
-        console.log('activate');
 
         this.visible = true;
     }
 
     deactivateTerminal() {
-        console.log('deactivate');
         document.body.appendChild(this.button);
         document.body.removeChild(this.termWindow);
         this.button.classList.toggle('termButton--sticky');
