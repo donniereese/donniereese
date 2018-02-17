@@ -1,4 +1,5 @@
 .termWindow {
+    color:#fff;
     width: calc(100% - 2em);
     max-width: 40em;
     height: 36em;
@@ -19,12 +20,13 @@
     background: #000;
     color: #fff;
     height: 2em;
-    border-top: 1px solid #333;
+    /* border-top: 1px solid #333; */
 }
 
 .termWindow ul {
-    height: 100%;
+    /* height: 100%; */
     max-height: calc(100% - 2em);
+    list-style: none;
 }
 
 .termButton {
