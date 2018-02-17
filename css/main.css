@@ -104,12 +104,14 @@ h2 {
 }
 
 .main-nav {
-  display: inline-block;
-  background: #171d1d;
-  margin-left: -4px; }
-  .main-nav a {
-    padding: .45em .65em;
-    padding: .74em .65em; }
+    display: inline-block;
+    background: #171d1d;
+    margin-left: -4px;
+}
+    .main-nav a {
+        padding: .45em .65em;
+        padding: .74em .65em;
+    }
 
 .standout-nav {
   margin: 1em;
@@ -247,7 +249,19 @@ button {
   font-weight: 400; }
 
 .page-header {
-  text-align: right; }
+    text-align: right;
+    max-height: 1.2em;
+}
+    .page-header .header-image {
+        display: inline-block;
+        height: 1.2em;
+        border: 1px solid red;
+    }
+        .header-image img {
+            height: 100%;
+            width: auto;
+            border: 1px solid blue;
+        }
 
 .main-nav {
   font-size: 1.2em; }

@@ -84,12 +84,23 @@ h2 {
   display: inline-block; }
 
 .main-nav {
-  display: inline-block;
-  background: #171d1d;
-  margin-left: -4px; }
-  .main-nav a {
-    padding: .45em .65em;
-    padding: .74em .65em; }
+    display: inline-block;
+    background: #171d1d;
+    margin-left: -4px;
+}
+    .main-nav span.header-image {
+        display: inline-block;
+        border-bottom: 1px solid red;
+    }
+    span.header-image {
+        height: 100%;
+        width: auto;
+    }
+    .main-nav a {
+        padding: .45em .65em;
+        padding: .74em .65em;
+    }
+
 
 .standout-nav {
   margin: 1em;
