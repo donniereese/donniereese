@@ -36,6 +36,26 @@ class WebTerm {
         return s;
     };
 
+    printHelp() {
+        this.writeToBuffer('scroll');
+        this.writeToBuffer('{t}Scrolls the screen by a default of 100px.');
+        this.writeToBuffer('');
+        this.writeToBuffer('help');
+        this.writeToBuffer('{t}Shows this help menu');
+    }
+
+    writeToBuffer(m) {
+        m = m.replace('{t}', ' -- ');
+        const newNode = document.createElement('li');
+        const newTextNode = document.createTextNode(m);
+        newNode.appendChild(newTextNode);
+        this.log.appendChild(newNode);
+    }
+
+    pushToHistory() {
+        this.history.push(`${m}`);
+    }
+
     createNewButton() {
         const termButton = document.createElement('div');
         const buttonText = document.createTextNode('>');
@@ -74,6 +94,16 @@ class WebTerm {
                     const dist = parseInt(cmdArr[1]) || 100;
                     window.scrollBy(0,dist);
                     break;
+                case 'help':
+                    this.printHelp();
+                    break;
+                case 'ssh':
+                case 'telnet':
+                case 'ping':
+                case 'traceroute':
+                case 'mkdir':
+                case 'ls':
+                    this.writeToBuffer("You've got the wrong idea about me. I'm not that sort of software.");
                 default:
                     found = false;
             }

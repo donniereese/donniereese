@@ -3,7 +3,7 @@
     width: calc(100% - 2em);
     max-width: 40em;
     height: 36em;
-    background: #111;
+    background: #000;
     margin: 1em;
     padding: 1em;
     border: .25em solid #fff;
@@ -11,17 +11,23 @@
     position: fixed;
     bottom: 1em;
     right: 1em;
-    box-shadow: .25em .5em 1em 0px #000;
+    box-shadow: .25em .5em 3em 0px #000;
 }
 
-.termWindow input, .termWindow button {
+.termWindow, .termWindow ul li, .termWindow input {
+    font-family: 'Source Code Pro' !important;
+}
+
+div.termWindow > input, .termWindow button {
     margin: 0;
+    padding: 0;
     border: none;
     background: #000;
     color: #fff;
     height: 2em;
     /* border-top: 1px solid #333; */
     cursor: text;
+    font-family: auto;
 }
 
 .termWindow ul {
