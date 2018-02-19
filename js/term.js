@@ -1,6 +1,7 @@
 
 class WebTerm {
     constructor() {
+        this._version = '0.0.2a';
         // Set variables
         this.visible = false;
         // elements
@@ -37,19 +38,30 @@ class WebTerm {
     };
 
     printHelp() {
-        this.writeToBuffer('scroll');
-        this.writeToBuffer('{t}Scrolls the screen by a default of 100px.');
-        this.writeToBuffer('');
-        this.writeToBuffer('help');
-        this.writeToBuffer('{t}Shows this help menu');
+        this.writeToBuffer([
+            '',
+            'exit',
+            '{t}Exits Terminal view and returns to the page',
+            'scroll [ [-]INT ]',
+            '{t}Scrolls the screen by a default of 100px.',
+            '{t}OPT: {+/-NUM} Scroll distance',
+            '',
+            'help',
+            '{t}Shows this help menu',
+            'version',
+            '{t}Current version of terminal'
+        ]);
     }
 
-    writeToBuffer(m) {
-        m = m.replace('{t}', ' -- ');
-        const newNode = document.createElement('li');
-        const newTextNode = document.createTextNode(m);
-        newNode.appendChild(newTextNode);
-        this.log.appendChild(newNode);
+    writeToBuffer(argArr = '') {
+        if (!Array.isArray(argArr)) argArr = new Array(argArr);
+        argArr.forEach((m) => {
+            m = m.replace('{t}', ' -- ');
+            const newNode = document.createElement('li');
+            const newTextNode = document.createTextNode(m);
+            newNode.appendChild(newTextNode);
+            this.log.appendChild(newNode);
+        });
     }
 
     pushToHistory() {
@@ -97,6 +109,9 @@ class WebTerm {
                 case 'help':
                     this.printHelp();
                     break;
+                case 'version':
+                    this.writeToBuffer(this._version);
+                    break;
                 case 'ssh':
                 case 'telnet':
                 case 'ping':
@@ -123,6 +138,7 @@ class WebTerm {
             this.history.push(this.currentInput);
             this.historyPointer = this.history.length - 1;
             this.input.value = '';
+            this.termWindow.scrollTop = this.termWindow.scrollHeight;
         }
     }
 
