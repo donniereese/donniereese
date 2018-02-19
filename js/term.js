@@ -1,7 +1,7 @@
 
 class WebTerm {
     constructor() {
-        this._version = '0.0.2a';
+        this._version = '0.0.4';
         // Set variables
         this.visible = false;
         // elements
@@ -64,7 +64,7 @@ class WebTerm {
         });
     }
 
-    pushToHistory() {
+    pushToHistory(m) {
         this.history.push(`${m}`);
     }
 
@@ -92,14 +92,18 @@ class WebTerm {
             this.currentInput = this.regExpEscape(this.input.value);
             const cmdArr = this.currentInput.split(' ');
             let found = true;
+            this.pushToHistory(`${this.currentInput}`);
+            this.writeToBuffer(`${this.currentInput}`);
             switch(cmdArr[0]) {
                 case 'close':
                 case 'quit':
                 case 'exit':
+                    this.writeToBuffer('Exiting Prompt...');
                     this.deactivateTerminal();
                     break;
                 case 'reload':
                 case 'refresh':
+                    this.writeToBuffer('Reloading Page...');
                     window.location.reload();
                     break;
                 case 'scroll':
@@ -110,7 +114,7 @@ class WebTerm {
                     this.printHelp();
                     break;
                 case 'version':
-                    this.writeToBuffer(this._version);
+                    this.writeToBuffer(`Site Prompt Version: ${this._version}`);
                     break;
                 case 'ssh':
                 case 'telnet':
@@ -121,21 +125,22 @@ class WebTerm {
                     this.writeToBuffer("You've got the wrong idea about me. I'm not that sort of software.");
                 default:
                     found = false;
+                    this.writeToBuffer(`'${this.currentInput}' is not a valid command.`);
             }
 
-            if (!found) {
-                const logItem =document.createElement('li');
-                const text = `'${this.currentInput}' is not a valid command.`;
-                const logText = document.createTextNode(text);
-                logItem.appendChild(logText);
-                this.log.appendChild(logItem);
-            } else {
-                const logItem =document.createElement('li');
-                const logText = document.createTextNode(`${this.currentInput}`);
-                logItem.appendChild(logText);
-                this.log.appendChild(logItem);
-            }
-            this.history.push(this.currentInput);
+            // if (!found) {
+            //     const logItem =document.createElement('li');
+            //     const text = `'${this.currentInput}' is not a valid command.`;
+            //     const logText = document.createTextNode(text);
+            //     logItem.appendChild(logText);
+            //     this.log.appendChild(logItem);
+            // } else {
+            //     const logItem =document.createElement('li');
+            //     const logText = document.createTextNode(`${this.currentInput}`);
+            //     logItem.appendChild(logText);
+            //     this.log.appendChild(logItem);
+            // }
+            // this.history.push(this.currentInput);
             this.historyPointer = this.history.length - 1;
             this.input.value = '';
             this.termWindow.scrollTop = this.termWindow.scrollHeight;
