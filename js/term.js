@@ -1,7 +1,7 @@
 
 class WebTerm {
     constructor() {
-        this._version = '0.0.4';
+        this._version = '0.0.5';
         // Set variables
         this.visible = false;
         // elements
@@ -9,6 +9,7 @@ class WebTerm {
         this.termWindow = null;
         this.input = null;
         this.buffer = null;
+        this.log = null;
         this.currentInput = '';
 
         this.history = [];
@@ -37,17 +38,32 @@ class WebTerm {
         return s;
     };
 
+    clearBuffer() {
+
+    }
+
+    clearTerminal() {
+        while (this.log.children.length > 0) {
+            this.log.removeChild(this.log.children[0]);
+        }
+    }
+
     printHelp() {
         this.writeToBuffer([
             '',
+            'clear',
+            '{t}Clears the prompt',
+            '',
             'exit',
             '{t}Exits Terminal view and returns to the page',
+            '',
             'scroll [ [-]INT ]',
             '{t}Scrolls the screen by a default of 100px.',
             '{t}OPT: {+/-NUM} Scroll distance',
             '',
             'help',
             '{t}Shows this help menu',
+            '',
             'version',
             '{t}Current version of terminal'
         ]);
@@ -95,6 +111,10 @@ class WebTerm {
             this.pushToHistory(`${this.currentInput}`);
             this.writeToBuffer(`${this.currentInput}`);
             switch(cmdArr[0]) {
+                case 'clear':
+                case 'cls':
+                    this.clearTerminal();
+                    break;
                 case 'close':
                 case 'quit':
                 case 'exit':
@@ -162,6 +182,8 @@ class WebTerm {
         this.termWindow.classList.add('termWindow');
         // toggle the sticky class on the button
         this.button.classList.toggle('termButton--sticky');
+        // Add Event listener onto window
+        this.termWindow.addEventListener('click', (e) => {this.input.focus()});
         // add it to the document
         document.body.appendChild(this.termWindow);
         this.termWindow.appendChild(this.button);
@@ -174,9 +196,13 @@ class WebTerm {
     }
 
     deactivateTerminal() {
+        // Move the button to the body node
         document.body.appendChild(this.button);
+        // remove the termWindow child
         document.body.removeChild(this.termWindow);
+        // Give the button the sticky class
         this.button.classList.toggle('termButton--sticky');
+        // set visible flag to false
         this.visible = false;
     }
 
