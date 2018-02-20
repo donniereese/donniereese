@@ -1,7 +1,7 @@
 
 class WebTerm {
     constructor() {
-        this._version = '0.0.5';
+        this._version = '0.0.6';
         // Set variables
         this.visible = false;
         // elements
@@ -49,6 +49,10 @@ class WebTerm {
         }
     }
 
+    toggleFullscreen() {
+        this.termWindow.classList.toggle('termWindow--fullscreen');
+    }
+
     printHelp() {
         this.writeToBuffer([
             '',
@@ -57,6 +61,9 @@ class WebTerm {
             '',
             'exit',
             '{t}Exits Terminal view and returns to the page',
+            '',
+            'fullscreen',
+            '{t}Toggles fullscreen terminal',
             '',
             'scroll [ [-]INT ]',
             '{t}Scrolls the screen by a default of 100px.',
@@ -121,6 +128,9 @@ class WebTerm {
                 case 'exit':
                     this.writeToBuffer('Exiting Prompt...');
                     this.deactivateTerminal();
+                    break;
+                case 'fullscreen':
+                    this.toggleFullscreen();
                     break;
                 case 'reload':
                 case 'refresh':
