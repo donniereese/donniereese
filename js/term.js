@@ -10,6 +10,7 @@ class WebTerm {
         this.input = null;
         this.buffer = null;
         this.log = null;
+        this.scrollView = null;
         this.currentInput = '';
 
         this.history = [];
@@ -148,22 +149,9 @@ class WebTerm {
                     this.writeToBuffer(`'${this.currentInput}' is not a valid command.`);
             }
 
-            // if (!found) {
-            //     const logItem =document.createElement('li');
-            //     const text = `'${this.currentInput}' is not a valid command.`;
-            //     const logText = document.createTextNode(text);
-            //     logItem.appendChild(logText);
-            //     this.log.appendChild(logItem);
-            // } else {
-            //     const logItem =document.createElement('li');
-            //     const logText = document.createTextNode(`${this.currentInput}`);
-            //     logItem.appendChild(logText);
-            //     this.log.appendChild(logItem);
-            // }
-            // this.history.push(this.currentInput);
             this.historyPointer = this.history.length - 1;
             this.input.value = '';
-            this.termWindow.scrollTop = this.termWindow.scrollHeight;
+            this.scrollView.scrollTop = this.scrollView.scrollHeight;
         }
     }
 
@@ -171,19 +159,27 @@ class WebTerm {
         // toggle the activated class name on the button
         // create the terminal window
         this.termWindow = document.createElement('div');
+        // create the scrollView
+        this.scrollView = document.createElement('div');
         // create the input prompt
         this.input = document.createElement('input');
         // create the console log
         this.log = document.createElement('ul');
+        // give scrollView the class
+        this.scrollView.classList.add('scrollView');
         // append them to the window element
-        this.termWindow.appendChild(this.log);
-        this.termWindow.appendChild(this.input);
+        this.scrollView.appendChild(this.log);
+        this.scrollView.appendChild(this.input);
+        // append scrollView to the termWindow
+        this.termWindow.appendChild(this.scrollView);
         // Give termWindow it's class
         this.termWindow.classList.add('termWindow');
         // toggle the sticky class on the button
         this.button.classList.toggle('termButton--sticky');
         // Add Event listener onto window
         this.termWindow.addEventListener('click', (e) => {this.input.focus()});
+        // Add event listener to scrollView
+        this.scrollView.addEventListener('click', (e) => {this.input.focus()});
         // add it to the document
         document.body.appendChild(this.termWindow);
         this.termWindow.appendChild(this.button);
