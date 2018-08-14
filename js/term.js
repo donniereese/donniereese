@@ -4,6 +4,8 @@ class WebTerm {
         this._version = '0.0.6';
         // Set variables
         this.visible = false;
+        this.path = '/';
+        this.prompt = '$';
         // elements
         this.button = null;
         this.termWindow = null;
@@ -53,28 +55,39 @@ class WebTerm {
         this.termWindow.classList.toggle('termWindow--fullscreen');
     }
 
-    printHelp() {
-        this.writeToBuffer([
-            '',
-            'clear',
-            '{t}Clears the prompt',
-            '',
-            'exit',
-            '{t}Exits Terminal view and returns to the page',
-            '',
-            'fullscreen',
-            '{t}Toggles fullscreen terminal',
-            '',
-            'scroll [ [-]INT ]',
-            '{t}Scrolls the screen by a default of 100px.',
-            '{t}OPT: {+/-NUM} Scroll distance',
-            '',
-            'help',
-            '{t}Shows this help menu',
-            '',
-            'version',
-            '{t}Current version of terminal'
-        ]);
+    pageNavigation(args = []) {
+        this.writeToBuffer('Not implemented yet.  Be patient!');
+    }
+
+    printHelp(args = []) {
+        if (args.length <= 0) {
+            this.writeToBuffer([
+                '',
+                'clear',
+                '{t}Clears the prompt',
+                '',
+                'exit',
+                '{t}Exits Terminal view and returns to the page',
+                '',
+                'fullscreen',
+                '{t}Toggles fullscreen terminal',
+                '',
+                'navigate',
+                '{t}Access and navigate page sections, anchors, properties, ect.',
+                '',
+                'scroll [ [-]INT ]',
+                '{t}Scrolls the screen by a default of 100px.',
+                '{t}OPT: {+/-NUM} Scroll distance',
+                '',
+                'help',
+                '{t}Shows this help menu',
+                '',
+                'version',
+                '{t}Current version of terminal'
+            ]);
+        } else {
+            this.writeToBuffer(args[0]);
+        }
     }
 
     writeToBuffer(argArr = '') {
@@ -132,6 +145,9 @@ class WebTerm {
                 case 'fullscreen':
                     this.toggleFullscreen();
                     break;
+                case 'navigate':
+                    this.pageNavigation(cmdArr.slice(1));
+                    break;
                 case 'reload':
                 case 'refresh':
                     this.writeToBuffer('Reloading Page...');
@@ -142,7 +158,7 @@ class WebTerm {
                     window.scrollBy(0,dist);
                     break;
                 case 'help':
-                    this.printHelp();
+                    this.printHelp(cmdArr.slice(1));
                     break;
                 case 'version':
                     this.writeToBuffer(`Site Prompt Version: ${this._version}`);
