@@ -1,0 +1,26 @@
+{
+  "name": "donniereese-website",
+  "version": "0.1.0",
+  "description": "personal website for donniereese",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donniereese/donniereese.github.io.git"
+  },
+  "author": "Donnie Reese <hi@donniereese.com> (https://www.donniereese.com)",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/donniereese/donniereese.github.io/issues"
+  },
+  "homepage": "https://github.com/donniereese/donniereese.github.io#readme",
+  "dependencies": {
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "react-helmet": "^5.2.0"
+  }
+}
