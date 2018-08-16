@@ -1,0 +1,13 @@
+.page-header {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: max-width 1s ease-in-out;
+  width: 100%;
+
+  z-index: 10;
+
+  > * {
+    vertical-align: top;
+  }
+}

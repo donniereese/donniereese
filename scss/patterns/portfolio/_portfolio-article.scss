@@ -1,0 +1,84 @@
+.portfolio-article {
+    background-color: $site-white;
+    border-radius: .5rem;
+    box-shadow: 0 .125rem .5rem 0 $site-black--translucent90;
+    // font-size: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem .5rem;
+    transition: margin-left 1s, margin-right 1s, font-size 1s;
+
+    h3 {
+        font-size: 1.8rem;
+        padding-bottom: .5rem;
+        padding-top: .5rem;
+
+        &::before {
+            background-color: $site-blue;
+            content: '';
+            display: block;
+            height: .25rem;
+            width: 6rem;
+        }
+    }
+
+    figure {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -.5rem;
+
+        figcaption {
+            display: block;
+            flex-grow: 2;
+            padding: .5rem;
+            width: 100%;
+        }
+
+        img {
+            // vertical-align: bottom;
+            // display: flex;
+            // width: 50%;
+            flex-basis: 50%;
+            width: 50%;
+            height: auto;
+
+            &:hover {
+                border: .25rem solid $site-green !important;
+                outline: 0;
+            }
+        }
+    }
+
+    .button {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 460px) {
+    .portfolio-article {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .portfolio-article {
+        font-size: 1.6rem;
+        margin: 0 calc(25% / 2);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .portfolio-article {
+        flex-basis: 48%;
+        font-size: 1.4rem;
+        margin: 0 auto;
+        // max-width: 640px;
+
+        p {
+            line-height: 1.6rem;
+            margin: 1rem 2rem;
+        }
+    }
+}

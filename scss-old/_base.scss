@@ -15,19 +15,7 @@ img {
     height: auto;
 }
 
-.img--vertical-growth {
+img.img--vertical-growth {
     width: auto;
     max-height: 100%;
-}
-
-a {
-    color: $site-blue;
-
-    &:hover {
-        color: $site-purple;
-    }
-
-    &:visited {
-        color: #040b66;
-    }
 }
