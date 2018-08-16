@@ -231,12 +231,17 @@ body {
   position: relative; }
 
 .page-header {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
   left: 0;
   position: absolute;
   top: 0;
   transition: max-width 1s ease-in-out;
   width: 100%;
   z-index: 10; }
+  .page-header .header-image {
+    max-width: 14rem; }
   .page-header > * {
     vertical-align: top; }
 
@@ -318,15 +323,18 @@ body {
       flex-basis: 100%; } }
 .main-nav {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: calc(100% - 1rem); }
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: 4rem;
+  max-width: 12rem;
+  overflow: hidden;
+  width: 20%; }
   .main-nav > a, .main-nav > i {
     color: #fff;
-    background-color: #101;
     background-color: #33253f;
-    display: inline-block;
-    flex-grow: 1;
+    display: block;
+    height: 4rem;
     padding: 1rem;
     text-align: center; }
   .main-nav > i {
@@ -334,15 +342,21 @@ body {
     display: inline-block; }
   .main-nav > a:visited {
     color: #fff; }
+  .main-nav:hover {
+    height: auto;
+    overflow: auto; }
   .main-nav::before {
-    background: none;
-    border-left: 0.175rem solid #43aa8b;
+    align-self: flex-end;
+    background-color: #33253f;
+    color: #fff;
     content: '...';
     display: block;
-    min-width: 1rem;
-    position: relative;
-    margin-top: -1rem;
-    margin-bottom: -1rem; }
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 4rem;
+    width: 4rem;
+    z-index: 4; }
 
 a.brand-header-logo {
   overflow: hidden;

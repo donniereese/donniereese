@@ -1,15 +1,18 @@
 .main-nav {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: calc(100% - 1rem);
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 4rem;
+    max-width: 12rem;
+    overflow: hidden;
+    width: 20%;
 
     > a, > i {
         color: $site-white;
-        background-color: $site-black;
         background-color: $site-purple;
-        display: inline-block;
-        flex-grow: 1;
+        display: block;
+        height: 4rem;
         padding: 1rem;
         text-align: center;
     }
@@ -23,15 +26,23 @@
         color: $site-white;
     }
 
+    &:hover {
+        height: auto;
+        overflow: auto;
+    }
+
     &::before {
-        background: none;
-        border-left: .175rem solid $site-green--alternate;
+        align-self: flex-end;
+        background-color: $site-purple;
+        color: #fff;
         content: '...';
         display: block;
-        min-width: 1rem;
-        position: relative;
-        margin-top: -1rem;
-        margin-bottom: -1rem;
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: 4rem;
+        width: 4rem;
+        z-index: 4;
     }
 }
 
