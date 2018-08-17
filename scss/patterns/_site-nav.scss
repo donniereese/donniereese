@@ -4,7 +4,7 @@
     flex-grow: 1;
     flex-shrink: 0;
     height: 4rem;
-    max-width: 12rem;
+    max-width: 4rem;
     overflow: hidden;
     width: 20%;
 
@@ -29,20 +29,31 @@
     &:hover {
         height: auto;
         overflow: auto;
+        max-width: 12rem;
     }
 
     &::before {
         align-self: flex-end;
         background-color: $site-purple;
         color: #fff;
-        content: '...';
         display: block;
         flex-basis: auto;
         flex-grow: 1;
         flex-shrink: 0;
         height: 4rem;
+        line-height: 4rem;
+        text-align: center;
         width: 4rem;
         z-index: 4;
+        // Font awesome
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smooting: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: '\f0c9';
     }
 }
 
