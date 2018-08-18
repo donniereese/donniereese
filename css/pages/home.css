@@ -420,8 +420,11 @@ a.brand-header-logo {
     padding-top: .75em;
     display: block; }
     .hero-content .about-blurb .button {
-      width: 60%;
-      margin: 1rem 20%; }
+      font-size: 1.6rem;
+      margin: 2rem 1.6rem;
+      max-width: 24rem;
+      min-width: 18rem;
+      width: 60%; }
     .hero-content .about-blurb p {
       display: inline-block;
       margin: .25rem 1rem;

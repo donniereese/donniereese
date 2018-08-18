@@ -74,8 +74,11 @@ a.brand-header-logo {
         display: block;
 
         .button {
-            width: 60%;
-            margin: 1rem 20%;
+          font-size: 1.6rem;
+          margin: 2rem 1.6rem;
+          max-width: 24rem;
+          min-width: 18rem;
+          width: 60%;
         }
 
         p {
