@@ -87,3 +87,13 @@
 .btn--fg-yellow {
     color: $site-yellow
 }
+
+// Borders
+.btn--border-yellow {
+    border: .5rem solid $site-yellow !important;
+}
+
+// Shadows
+.btn--shadow-black {
+    box-shadow: .2rem .4rem 1rem .4rem $site-black--translucent80;
+}

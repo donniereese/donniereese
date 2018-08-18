@@ -175,6 +175,12 @@ body {
 .btn--fg-yellow {
   color: #ecc02f; }
 
+.btn--border-yellow {
+  border: 0.5rem solid #ecc02f !important; }
+
+.btn--shadow-black {
+  box-shadow: 0.2rem 0.4rem 1rem 0.4rem rgba(17, 0, 17, 0.2); }
+
 .btn--hollow-white {
   background-color: transparent;
   border: 0.25rem solid #fff;
