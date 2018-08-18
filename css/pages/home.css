@@ -439,12 +439,14 @@ a.brand-header-logo {
         .hero-content .about-blurb .button {
           margin: 2rem 1.6rem; } }
     .hero-content .about-blurb p {
+      color: #fff;
       display: block;
       margin: .25rem 1rem;
       max-width: 48rem;
       padding: .125rem .5rem;
       text-align: left; }
       .hero-content .about-blurb p strong {
+        color: #5dd9c1;
         display: block; }
         @media only screen and (max-width: 620px) {
           .hero-content .about-blurb p strong {

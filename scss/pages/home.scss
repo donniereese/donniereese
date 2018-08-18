@@ -90,6 +90,7 @@ a.brand-header-logo {
 
         p {
             // background-color: $site-blue;
+            color: $site-white;
             display: block;
             margin: .25rem 1rem;
             max-width: 48rem;
@@ -97,6 +98,7 @@ a.brand-header-logo {
             text-align: left;
 
             strong {
+              color: $site-green;
               display: block;
 
               @media only screen and (max-width: 620px) {
