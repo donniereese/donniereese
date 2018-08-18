@@ -69,9 +69,10 @@ a.brand-header-logo {
 
     .about-blurb {
         align-self: flex-start;
+        display: block;
         flex-shrink: 1;
         padding-top: .75em;
-        display: block;
+
 
         .button {
           font-size: 1.6rem;
@@ -115,6 +116,11 @@ a.brand-header-logo {
                     padding-right: .5rem;
                 }
             }
+            @media only screen and (min-width: 460px) { font-size: 1.4rem; }
+            @media only screen and (min-width: 580px) { font-size: 1.6rem; }
+            @media only screen and (min-width: 620px) { font-size: 2.0rem; }
+            @media only screen and (min-width: 920px) { font-size: 2.4rem; }
+            @media only screen and (min-width: 1024px) { font-size: 2.8rem; }
         }
     }
 }

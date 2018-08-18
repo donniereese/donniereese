@@ -416,9 +416,9 @@ a.brand-header-logo {
     position: relative; }
   .hero-content .about-blurb {
     align-self: flex-start;
+    display: block;
     flex-shrink: 1;
-    padding-top: .75em;
-    display: block; }
+    padding-top: .75em; }
     .hero-content .about-blurb .button {
       font-size: 1.6rem;
       margin: 2rem 1.6rem;
@@ -449,6 +449,21 @@ a.brand-header-logo {
           .hero-content .about-blurb p:last-of-type {
             margin-right: 1rem;
             padding-right: .5rem; } }
+      @media only screen and (min-width: 460px) {
+        .hero-content .about-blurb p {
+          font-size: 1.4rem; } }
+      @media only screen and (min-width: 580px) {
+        .hero-content .about-blurb p {
+          font-size: 1.6rem; } }
+      @media only screen and (min-width: 620px) {
+        .hero-content .about-blurb p {
+          font-size: 2.0rem; } }
+      @media only screen and (min-width: 920px) {
+        .hero-content .about-blurb p {
+          font-size: 2.4rem; } }
+      @media only screen and (min-width: 1024px) {
+        .hero-content .about-blurb p {
+          font-size: 2.8rem; } }
 
 .header-title {
   display: inline-block;
