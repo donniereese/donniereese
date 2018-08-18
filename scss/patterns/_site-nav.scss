@@ -22,6 +22,10 @@
         display: inline-block;
     }
 
+    > a:hover {
+        background-color: $site-blue;
+    }
+
     > a:visited {
         color: $site-white;
     }
@@ -34,7 +38,7 @@
 
     &::before {
         align-self: flex-end;
-        background-color: $site-purple;
+        background-color: $site-blue;
         color: #fff;
         display: block;
         flex-basis: auto;

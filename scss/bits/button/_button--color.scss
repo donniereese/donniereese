@@ -93,6 +93,15 @@
     border: .5rem solid $site-yellow !important;
 }
 
+.btn--border-blue {
+    border: .5rem solid $site-blue !important;
+}
+
+.btn--border-accent {
+    border: .5rem solid $site-accent;
+}
+
+
 // Shadows
 .btn--shadow-black {
     box-shadow: .2rem .4rem 1rem .4rem $site-black--translucent80;
