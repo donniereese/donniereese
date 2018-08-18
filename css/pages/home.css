@@ -241,7 +241,7 @@ body {
   top: 0;
   transition: max-width 1s ease-in-out;
   width: 100%;
-  z-index: 10; }
+  z-index: 5; }
   .page-header .header-image {
     max-width: 14rem; }
   .page-header > * {
@@ -371,48 +371,52 @@ body {
     content: '\f0c9'; }
 
 a.brand-header-logo {
-  overflow: hidden;
   display: block;
   position: relative;
-  width: 134px; }
+  height: 100%; }
   a.brand-header-logo > img {
-    height: auto;
-    max-width: none;
-    width: 480px; }
+    border: 1rem solid #ecc02f;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.4rem 1rem 0.4rem rgba(17, 0, 17, 0.2);
+    width: auto;
+    height: 100%; }
 
 .hero-content {
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
-  margin: 0 auto;
-  max-height: 70vh;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-height: 60vh;
   position: relative;
   text-align: center;
   width: 100%;
-  height: 100%; }
+  height: 94%; }
+  @media only screen and (max-width: 620px) {
+    .hero-content {
+      flex-direction: column; } }
   .hero-content .hero-logo {
-    border: 1px solid red;
-    flex-grow: 1;
     display: block;
-    margin: 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
     max-width: 1000px;
     height: 100%; }
+    @media only screen and (max-width: 620px) {
+      .hero-content .hero-logo {
+        display: none; } }
   .hero-content .brand-header-logo {
-    border: 1px solid blue;
     display: block;
     max-height: 100%;
     position: relative; }
   .hero-content .about-blurb {
+    align-self: flex-start;
     flex-shrink: 1;
-    margin: 0 auto;
     padding-top: .75em;
     display: block; }
     .hero-content .about-blurb .button {
       width: 60%;
       margin: 1rem 20%; }
     .hero-content .about-blurb p {
-      background-color: #5863f8;
       display: inline-block;
       margin: .25rem 1rem;
       padding: .125rem .5rem;
@@ -454,6 +458,12 @@ textarea {
   margin-bottom: .5em;
   display: block; }
 
+label,
+input,
+textarea {
+  background: #fff;
+  color: #171d1d; }
+
 input,
 textarea {
   padding: .65em .65em 0; }
@@ -473,12 +483,6 @@ h1 {
   color: #fff; }
 
 h2 {
-  color: #171d1d; }
-
-label,
-input,
-textarea {
-  background: #fff;
   color: #171d1d; }
 
 input,
@@ -657,9 +661,6 @@ button {
   .about-section .subsection,
   .contact-section .contact-form {
     width: 75%; }
-
-  .hero-content .about-blurb {
-    width: 60%; }
 
   .about-section {
     padding: 3em; }

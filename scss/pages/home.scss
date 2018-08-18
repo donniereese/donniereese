@@ -11,19 +11,24 @@
 
 // css
 a.brand-header-logo {
-    overflow: hidden;
+    // overflow: hidden;
     display: block;
     position: relative;
     // right: -72%;
     // right: -16.4rem;
     // right: -260px;
-    width: 134px;
+    // width: 134px;
+    height: 100%;
 
     > img {
-        height: auto;
+        border: 1rem solid $site-yellow;
+        border-radius: 1rem;
+        box-shadow: .2rem .4rem 1rem .4rem $site-black--translucent80;
+        width: auto;
+        height: 100%;
         // width: 360px;
-        max-width: none;
-        width: 480px;
+        // max-width: none;
+        // width: 480px;
     }
 }
 
@@ -31,34 +36,40 @@ a.brand-header-logo {
     align-items: center;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-height: 70vh;
+    justify-content: space-between;
+    margin: 2rem auto;
+    max-height: 60vh;
     // padding-top: 8em;
     position: relative;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 94%;
+
+    @media only screen and (max-width: 620px) {
+      flex-direction: column;
+    }
 
     .hero-logo {
-        border: 1px solid red;
-        flex-grow: 1;
-        display: block;
-        margin: 0 auto;
-        max-width: 1000px;
-        height: 100%;
+      display: block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      max-width: 1000px;
+      height: 100%;
+
+      @media only screen and (max-width: 620px) {
+        display: none;
+      }
     }
 
     .brand-header-logo {
-        border: 1px solid blue;
         display: block;
         max-height: 100%;
         position: relative;
     }
 
     .about-blurb {
+        align-self: flex-start;
         flex-shrink: 1;
-        margin: 0 auto;
         padding-top: .75em;
         display: block;
 
@@ -68,7 +79,7 @@ a.brand-header-logo {
         }
 
         p {
-            background-color: $site-blue;
+            // background-color: $site-blue;
             display: inline-block;
             margin: .25rem 1rem;
             padding: .125rem .5rem;
@@ -116,6 +127,7 @@ a.brand-header-logo {
   margin: 1em;
   padding: .65em; }
 
+// Layout
 label,
 input,
 textarea {
@@ -124,12 +136,23 @@ textarea {
   margin-bottom: .5em;
   display: block; }
 
+  // Color
+  label,
+  input,
+  textarea {
+    background: #fff;
+    color: #171d1d; }
+
+// Layout
 input,
 textarea {
-  padding: .65em .65em 0; }
-  input:focus,
-  textarea:focus {
-    outline: none; }
+  padding: .65em .65em 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
 
 button {
   padding: .2em .8em; }
@@ -142,12 +165,6 @@ h1 {
   color: #fff; }
 
 h2 {
-  color: #171d1d; }
-
-label,
-input,
-textarea {
-  background: #fff;
   color: #171d1d; }
 
 input,
@@ -182,8 +199,6 @@ button {
   border: .45em solid #000;
   background-color: #e9e9ed; }
 
-
-
 .contact-section {
   background-color: #fff; }
 
@@ -203,17 +218,20 @@ button {
   background: url("../images/blurb-accent.png") top left no-repeat;
   background-size: 2em; }
 
+// Typography
 h1 {
   font-family: Slabo, sans-serif;
   font-size: 2.4em;
   font-weight: 900;
   text-align: center; }
 
+// Typography
 h2 {
   font-family: Montserrat, sans-serif;
   font-size: 2.6em;
   font-weight: 700; }
 
+// Typography
 a {
   font-weight: 400;
   font-family: 'Oswald', sans-serif;
@@ -221,45 +239,55 @@ a {
   a:hover {
     text-decoration: underline; }
 
+// Typography
 label {
   font-family: 'Roboto Slab', slab-serif;
   font-weight: 700; }
 
+// Typography
 input,
 textarea {
   font-family: Montserrat, sans-serif;
   font-size: 1em; }
 
+// Typography
 textarea {
   font-size: .65em; }
 
+// Typography
 button {
   font-family: 'Roboto Slab', slab-serif;
   font-weight: 400; }
 
+// Typography
 .aside-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8em;
   font-weight: 700; }
 
+// Typography
 .standout-nav a {
   font-size: 1.45em;
   padding: .45em .65em; }
 
+// Typography
 .fine-print {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
+// Typography
 .talkout {
     font-size: 2rem;
     text-align: left;
 }
 
+// Typography
 .contact-form label {
     font-size: 2em;
 }
 
+// Typography
 .contact-form button {
     font-size: 1.6em;
 }
@@ -285,6 +313,8 @@ button {
         font-size: 2.4em;
         font-size: 12vmin;
     }
+
+
     @media only screen and (max-height: 420px) {
         .about-section h2 {
             font-size: 2.4em;
@@ -355,7 +385,7 @@ button {
         // padding-top: 4em;
     }
     .hero-content .about-blurb {
-        width: 60%;
+        // width: 60%;
     }
     .about-section {
         padding: 3em;
