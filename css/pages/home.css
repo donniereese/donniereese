@@ -420,17 +420,29 @@ a.brand-header-logo {
     flex-shrink: 1;
     padding-top: .75em; }
     .hero-content .about-blurb .button {
+      display: block;
       font-size: 1.6rem;
-      margin: 2rem 1.6rem;
       max-width: 24rem;
       min-width: 18rem;
       width: 60%; }
+      @media only screen and (max-width: 620px) {
+        .hero-content .about-blurb .button {
+          margin: 2rem auto; } }
+      @media only screen and (min-width: 621px) {
+        .hero-content .about-blurb .button {
+          margin: 2rem 1.6rem; } }
     .hero-content .about-blurb p {
-      display: inline-block;
+      display: block;
       margin: .25rem 1rem;
+      max-width: 48rem;
       padding: .125rem .5rem;
-      float: left;
-      clear: left; }
+      text-align: left; }
+      .hero-content .about-blurb p strong {
+        display: block; }
+        @media only screen and (max-width: 620px) {
+          .hero-content .about-blurb p strong {
+            font-size: 120%;
+            margin-bottom: 1rem; } }
       .hero-content .about-blurb p:first-of-type {
         background-color: none;
         margin-top: 1rem; }
@@ -438,7 +450,6 @@ a.brand-header-logo {
         margin-bottom: 1rem; }
       @media only screen and (max-height: 361px) {
         .hero-content .about-blurb p {
-          display: inline;
           margin: 0;
           float: none;
           margin-left: -.245rem;

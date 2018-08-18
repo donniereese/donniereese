@@ -68,27 +68,42 @@ a.brand-header-logo {
     }
 
     .about-blurb {
-        align-self: flex-start;
+        align-self: flex-start;;
         display: block;
         flex-shrink: 1;
         padding-top: .75em;
+        // text-align: center;
 
 
         .button {
+          display: block;
           font-size: 1.6rem;
-          margin: 2rem 1.6rem;
+          // margin: 2rem auto;
           max-width: 24rem;
           min-width: 18rem;
           width: 60%;
+
+          @media only screen and (max-width: 620px) { margin: 2rem auto; }
+
+          @media only screen and (min-width: 621px) { margin: 2rem 1.6rem; }
         }
 
         p {
             // background-color: $site-blue;
-            display: inline-block;
+            display: block;
             margin: .25rem 1rem;
+            max-width: 48rem;
             padding: .125rem .5rem;
-            float: left;
-            clear: left;
+            text-align: left;
+
+            strong {
+              display: block;
+
+              @media only screen and (max-width: 620px) {
+                font-size: 120%;
+                margin-bottom: 1rem;
+              }
+            }
 
             &:first-of-type {
                 background-color: none;
@@ -100,7 +115,6 @@ a.brand-header-logo {
             }
 
             @media only screen and (max-height: 361px) {
-                display: inline;
                 margin: 0;
                 float: none;
                 margin-left: -.245rem;
