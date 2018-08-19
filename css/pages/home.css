@@ -170,6 +170,8 @@
   margin-right: 0;
   padding: 1rem .5rem;
   transition: margin-left 1s, margin-right 1s, font-size 1s; }
+  .portfolio-article .portfolio-item-header {
+    border-bottom: 1px solid #eee; }
   .portfolio-article h3 {
     font-size: 1.8rem;
     padding-bottom: .5rem;
@@ -219,7 +221,7 @@
 .portfolio-section {
   background-color: #e9e9ed;
   background-color: #5863f8;
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/funky-lines.png");
+  background-image: url("../../images/funky-lines-green.png");
   padding-top: 4rem;
   padding-bottom: 4rem; }
   .portfolio-section h2 {

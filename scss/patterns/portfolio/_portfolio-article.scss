@@ -8,6 +8,10 @@
     padding: 1rem .5rem;
     transition: margin-left 1s, margin-right 1s, font-size 1s;
 
+    .portfolio-item-header {
+        border-bottom: 1px solid #eee;
+    }
+
     h3 {
         font-size: 1.8rem;
         padding-bottom: .5rem;
