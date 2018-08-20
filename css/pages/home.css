@@ -105,6 +105,9 @@
 .btn--shadow-black {
   box-shadow: 0.2rem 0.4rem 1rem 0.4rem rgba(17, 0, 17, 0.2); }
 
+.btn--shadow-black-half-dist {
+  box-shadow: 0.1rem 0.2rem 0.6rem 0.2rem rgba(17, 0, 17, 0.2); }
+
 .btn--hollow-white {
   background-color: transparent;
   border: 0.25rem solid #fff;
@@ -165,23 +168,38 @@
 .portfolio-article {
   background-color: #fff;
   border-radius: .5rem;
-  box-shadow: 0 0.125rem 0.5rem 0 rgba(17, 0, 17, 0.1);
-  margin-left: 0;
-  margin-right: 0;
-  padding: 1rem .5rem;
+  display: block;
+  margin: 1rem 0;
+  max-width: 512px;
+  overflow: hidden;
+  position: relative;
   transition: margin-left 1s, margin-right 1s, font-size 1s; }
   .portfolio-article .portfolio-item-header {
-    border-bottom: 1px solid #eee; }
-  .portfolio-article h3 {
+    background-color: #222e50;
+    border-radius: .25rem;
+    color: #fff;
+    display: inline-block;
     font-size: 1.8rem;
-    padding-bottom: .5rem;
-    padding-top: .5rem; }
-    .portfolio-article h3::before {
-      background-color: #5863f8;
-      content: '';
-      display: block;
-      height: .25rem;
-      width: 6rem; }
+    height: 3.6rem;
+    left: 0;
+    margin: .5rem;
+    padding: .5rem;
+    position: absolute;
+    top: 0;
+    z-index: 1; }
+  .portfolio-article .portfolio-item-blurb {
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    margin-top: -4rem;
+    padding: .5rem;
+    position: relative;
+    width: 90%; }
+  .portfolio-article .portfolio-item-links {
+    margin: 0 auto;
+    padding: 1rem .5rem;
+    text-align: right; }
   .portfolio-article figure {
     align-items: flex-start;
     display: flex;
@@ -202,44 +220,49 @@
         outline: 0; }
   .portfolio-article .button {
     margin-left: 0; }
+  @media only screen and (max-width: 519) {
+    .portfolio-article:first-of-type {
+      margin-top: 0; }
+    .portfolio-article:last-of-type {
+      margin-bottom: 0; } }
+  @media only screen and (min-width: 460px) {
+    .portfolio-article {
+      font-size: 1.4rem; } }
+  @media only screen and (min-width: 700px) {
+    .portfolio-article {
+      font-size: 1.6rem; } }
+  @media only screen and (min-width: 900px) {
+    .portfolio-article {
+      flex-basis: 48%;
+      font-size: 1.4rem; }
+      .portfolio-article p {
+        line-height: 1.6rem; } }
 
-@media only screen and (min-width: 460px) {
-  .portfolio-article {
-    font-size: 1.4rem; } }
-@media only screen and (min-width: 700px) {
-  .portfolio-article {
-    font-size: 1.6rem;
-    margin: 0 calc(25% / 2); } }
-@media only screen and (min-width: 900px) {
-  .portfolio-article {
-    flex-basis: 48%;
-    font-size: 1.4rem;
-    margin: 0 auto; }
-    .portfolio-article p {
-      line-height: 1.6rem;
-      margin: 1rem 2rem; } }
 .portfolio-section {
+  align-items: flex-start;
   background-color: #e9e9ed;
   background-color: #5863f8;
   background-image: url("../../images/funky-lines-green.png");
+  display: flex;
+  flex-direction: column;
   padding-top: 4rem;
   padding-bottom: 4rem; }
   .portfolio-section h2 {
     margin-left: .5rem;
     transition: margin-left 1s, margin-right 1s; }
+  @media only screen and (min-width: 520px) {
+    .portfolio-section {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  @media only screen and (min-width: 900px) {
+    .portfolio-section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      .portfolio-section h2 {
+        flex-basis: 100%; } }
 
-@media only screen and (min-width: 700px) {
-  .portfolio-section h2 {
-    margin-left: calc(25% / 2);
-    margin-right: calc(25% / 2); } }
-@media only screen and (min-width: 900px) {
-  .portfolio-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-    .portfolio-section h2 {
-      flex-basis: 100%; } }
 a.brand-header-logo {
   display: block;
   position: relative;
