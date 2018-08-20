@@ -239,12 +239,13 @@
         line-height: 1.6rem; } }
 
 .portfolio-section {
-  align-items: flex-start;
+  align-items: space-around;
   background-color: #e9e9ed;
   background-color: #5863f8;
   background-image: url("../../images/funky-lines-green.png");
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   padding-top: 4rem;
   padding-bottom: 4rem; }
   .portfolio-section h2 {
@@ -258,8 +259,7 @@
     .portfolio-section {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around; }
+      flex-wrap: wrap; }
       .portfolio-section h2 {
         flex-basis: 100%; } }
 
@@ -451,8 +451,7 @@ button {
 .about-section {
   display: block;
   margin: 0 auto;
-  min-height: 100vh;
-  padding: 4em 1em;
+  padding: 4rem 1rem 8rem;
   text-align: center;
   width: 100%; }
   .about-section section {
@@ -497,10 +496,8 @@ button {
   .contact-section .contact-form {
     width: 75%; }
 
-  .about-section {
-    padding: 3em; }
-
   .contact-section .contact-form {
-    margin: 0 auto; } }
+    margin: 0 auto;
+    padding: 4rem 1rem 8rem; } }
 
 /*# sourceMappingURL=home.css.map */

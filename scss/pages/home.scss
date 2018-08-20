@@ -259,9 +259,10 @@ button {
 
 .about-section {
   display: block;
+  // height: 100vh;
   margin: 0 auto;
-  min-height: 100vh;
-  padding: 4em 1em;
+  // max-height: 100vh;
+  padding: 4rem 1rem 8rem;
   text-align: center;
   width: 100%;
 
@@ -312,16 +313,8 @@ button {
     .contact-section .contact-form {
         width: 75%;
     }
-    .hero-content {
-        // padding-top: 4em;
-    }
-    .hero-content .about-blurb {
-        // width: 60%;
-    }
-    .about-section {
-        padding: 3em;
-    }
     .contact-section .contact-form {
         margin: 0 auto;
+        padding: 4rem 1rem 8rem;
     }
 }
